@@ -1,0 +1,4 @@
+Para adicionar a sua logo:
+1. Renomeie o arquivo da sua logo para "logo.png"
+2. Faça o upload deste arquivo aqui para dentro desta pasta "img"
+3. A logo aparecerá automaticamente no topo do aplicativo e no relatório final!
