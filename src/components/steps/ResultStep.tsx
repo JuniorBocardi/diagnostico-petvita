@@ -43,6 +43,7 @@ export function ResultStep({ state }: Props) {
   const article = petData.gender === 'Fêmea' ? 'da' : 'do';
   const shortArticle = petData.gender === 'Fêmea' ? 'a' : 'o';
   const nameDisplay = petData.name ? ` ${article} ${petData.name}` : ' do seu pet';
+  const targetName = petData.name ? `${shortArticle} ${petData.name}` : 'o seu pet';
 
   let scoreClass = "Crítico";
   if (totalScore >= 6) scoreClass = "Crítico";
@@ -56,10 +57,8 @@ export function ResultStep({ state }: Props) {
     window.print();
   };
 
-  const handleWhatsApp = () => {
-    const text = `Olá, finalizei o diagnóstico${nameDisplay}! O score deu: *${scoreClass}* (${totalScore}). Gostaria de receber meu plano personalizado para ${shortArticle} ${petData.name}.`;
-    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
-  };
+  const whatsappText = `Acabei de finalizar o diagnóstico${nameDisplay}! O score deu: *${scoreClass}* (${totalScore}). Gostaria de receber meu plano personalizado para ${targetName}.`;
+  const whatsappUrl = `https://wa.me/558599625078?text=${encodeURIComponent(whatsappText)}`;
 
   return (
     <div className="flex flex-col min-h-0 bg-beige-100 -mx-6 px-6 pt-2 pb-10">
@@ -168,10 +167,15 @@ export function ResultStep({ state }: Props) {
 
       {/* Floating Action Buttons Area (Hidden in print) */}
       <div className="space-y-3 no-print">
-        <Button onClick={handleWhatsApp} className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg">
+        <a 
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg w-full rounded-xl py-4 px-6 text-sm font-medium transition-all duration-300 ease-in-out active:scale-[0.98]"
+        >
           <MessageCircle className="w-5 h-5" />
           {petData.name ? `Começar a curar ${shortArticle} ${petData.name}` : 'Começar Tratamento'}
-        </Button>
+        </a>
         <Button variant="outline" onClick={handleDownloadPDF} className="flex items-center justify-center gap-2 bg-white">
           <Download className="w-4 h-4" />
           Salvar Relatório em PDF

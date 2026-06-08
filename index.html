@@ -3,19 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>Diagnostico PetVita</title>
     <script>
-      // Workaround for environments defining window.fetch as a getter only
       try {
-        const originalFetch = window.fetch;
+        const _fetch = window.fetch;
         Object.defineProperty(window, 'fetch', {
-          value: originalFetch,
-          writable: true,
-          configurable: true
+          get: () => _fetch,
+          set: (v) => {},
+          configurable: true,
+          enumerable: true
         });
-      } catch (e) {
-        console.warn('Could not make window.fetch writable', e);
-      }
+      } catch (e) {}
     </script>
   </head>
   <body>
