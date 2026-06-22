@@ -57,7 +57,7 @@ export function ResultStep({ state }: Props) {
     window.print();
   };
 
-  const whatsappText = `Acabei de finalizar o diagnóstico${nameDisplay}! O score deu: *${scoreClass}* (${totalScore}). Gostaria de receber meu plano personalizado para ${targetName}.`;
+  const whatsappText = `Acabei de finalizar o diagnóstico${nameDisplay}! O score deu: *${scoreClass}* (${totalScore}).`;
   const whatsappUrl = `https://wa.me/5512982423509?text=${encodeURIComponent(whatsappText)}`;
 
   return (
