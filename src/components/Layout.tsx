@@ -37,7 +37,7 @@ export function Layout({ children, currentStep, totalSteps, stepId, showProgress
 
           {!logoError ? (
             <img 
-              src="/img/logo.png" 
+              src="./img/logo.png" 
               alt="Instituto PetVita" 
               className="h-16 object-contain mb-2"
               onError={() => setLogoError(true)}

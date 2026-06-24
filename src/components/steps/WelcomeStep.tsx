@@ -25,7 +25,7 @@ export function WelcomeStep({ onNext }: Props) {
         >
           {!logoError ? (
             <img 
-              src="/img/logo.png" 
+              src="./img/logo.png" 
               alt="Instituto PetVita" 
               className="w-48 h-48 object-contain drop-shadow-sm"
               onError={() => setLogoError(true)}

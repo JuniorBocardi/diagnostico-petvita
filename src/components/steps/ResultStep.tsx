@@ -76,7 +76,7 @@ export function ResultStep({ state }: Props) {
           {/* Document Header */}
           <div className="text-center mb-6 border-b border-olive-100 pb-6 flex flex-col items-center">
             <img 
-              src="/img/logo.png" 
+              src="./img/logo.png" 
               alt="Instituto PetVita" 
               className="h-16 object-contain mb-4"
               onError={(e) => {
